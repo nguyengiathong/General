@@ -43,3 +43,8 @@ APK nằm ở `app/build/outputs/apk/debug/app-debug.apk`.
 - Ứng dụng chỉ chặn quảng cáo **bên trong trình duyệt này**, không chặn trong app khác (việc đó cần VPN/DNS như "Private DNS" `dns.adguard-dns.com`).
 - Quảng cáo YouTube chèn trong video phát từ cùng tên miền với nội dung nên có thể không chặn được hoàn toàn.
 - APK release đang ký bằng debug key cho tiện cài; khi phát hành lên Play Store hãy cấu hình keystore riêng.
+
+## Tải APK trực tiếp
+
+Sau mỗi lần build, workflow tự commit APK vào `apk/AdBlockBrowser.apk`.
+Link tải (mở trên điện thoại): https://github.com/nguyengiathong/General/raw/claude/bold-mendel-4a5aqd/apk/AdBlockBrowser.apk
