@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Ad Blocker",
+  "version": "1.0.0",
+  "description": "Chặn quảng cáo trên YouTube: tự bỏ qua quảng cáo video, ẩn banner và chặn tên miền quảng cáo.",
+  "permissions": ["storage", "declarativeNetRequest"],
+  "host_permissions": ["*://*.youtube.com/*", "*://*.doubleclick.net/*", "*://*.googlesyndication.com/*", "*://*.googleadservices.com/*"],
+  "background": { "service_worker": "src/background.js" },
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "ad_rules", "enabled": true, "path": "rules.json" }]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["src/content.js"],
+      "css": ["src/hide.css"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "YouTube Ad Blocker",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+}

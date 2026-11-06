@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <title>YouTube Ad Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" width="32" height="32">
+    <h1>YouTube Ad Blocker</h1>
+  </header>
+  <label class="toggle">
+    <span id="status">Đang bật</span>
+    <input type="checkbox" id="enabled" checked>
+    <span class="slider"></span>
+  </label>
+  <div class="stat">
+    <div class="num" id="count">0</div>
+    <div class="label">quảng cáo video đã bỏ qua</div>
+  </div>
+  <button id="reset">Đặt lại bộ đếm</button>
+  <p class="hint">Tải lại trang YouTube sau khi bật/tắt để áp dụng đầy đủ.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

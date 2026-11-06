@@ -1,0 +1,30 @@
+/* Ẩn các khối quảng cáo tĩnh trên YouTube (chỉ áp dụng khi tiện ích đang bật) */
+html:not([data-ytab-off]) :is(
+  #masthead-ad,
+  #player-ads,
+  #panels > ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-ads"],
+  ytd-ad-slot-renderer,
+  ytd-banner-promo-renderer,
+  ytd-in-feed-ad-layout-renderer,
+  ytd-display-ad-renderer,
+  ytd-promoted-sparkles-web-renderer,
+  ytd-promoted-video-renderer,
+  ytd-compact-promoted-video-renderer,
+  ytd-action-companion-ad-renderer,
+  ytd-player-legacy-desktop-watch-ads-renderer,
+  ytd-statement-banner-renderer,
+  ytd-primetime-promo-renderer,
+  ytd-brand-video-singleton-renderer,
+  ytd-rich-item-renderer:has(> #content > ytd-ad-slot-renderer),
+  ytd-rich-section-renderer:has(ytd-statement-banner-renderer),
+  ytm-promoted-sparkles-web-renderer,
+  ytm-companion-ad-renderer,
+  ad-slot-renderer,
+  .ytd-merch-shelf-renderer,
+  .video-ads .ytp-ad-overlay-container,
+  .ytp-ad-overlay-slot,
+  .ytp-ad-image-overlay,
+  .ytp-suggested-action-badge
+) {
+  display: none !important;
+}
