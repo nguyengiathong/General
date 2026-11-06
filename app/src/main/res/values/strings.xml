@@ -18,4 +18,18 @@
     <string name="forward">Tiến</string>
     <string name="refresh">Tải lại</string>
     <string name="home">Trang chủ</string>
+    <string name="browser_name">Trình duyệt chặn QC</string>
+    <string name="btn_on">BẬT</string>
+    <string name="btn_off">TẮT</string>
+    <string name="vpn_on">🛡 Đang chặn quảng cáo trên toàn bộ điện thoại</string>
+    <string name="vpn_off">Chặn quảng cáo đang tắt — bấm nút để bật</string>
+    <string name="stats">Đã chặn: %1$d lượt · Danh sách: %2$d tên miền</string>
+    <string name="vpn_denied">Cần cho phép kết nối VPN để chặn quảng cáo</string>
+    <string name="open_browser">Mở trình duyệt tích hợp</string>
+    <string name="recent_title">Tên miền bị chặn gần đây:</string>
+    <string name="channel_name">Chặn quảng cáo</string>
+    <string name="notif_title">Đang chặn quảng cáo</string>
+    <string name="notif_text">Áp dụng cho Chrome, Firefox và mọi ứng dụng</string>
+    <string name="turn_off">Tắt</string>
+    <string name="tips">Lưu ý để chặn hiệu quả:\n• Cài đặt → Mạng → DNS riêng tư (Private DNS): chọn “Tắt” hoặc “Tự động”.\n• Chrome → Cài đặt → Quyền riêng tư → “Dùng DNS bảo mật”: TẮT.\n• Sau khi bật, nên đóng hẳn và mở lại trình duyệt (trình duyệt có thể nhớ địa chỉ cũ).\n• Biểu tượng chìa khóa 🔑 trên thanh trạng thái là VPN cục bộ của app, không gửi dữ liệu ra ngoài.</string>
 </resources>

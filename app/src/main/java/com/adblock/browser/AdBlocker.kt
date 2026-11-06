@@ -32,6 +32,23 @@ object AdBlocker {
 
     val blockedCount = AtomicInteger(0)
 
+    /** Các tên miền bị chặn gần đây (mới nhất ở đầu), dùng để hiển thị trên màn hình chính. */
+    val recentBlocked = java.util.concurrent.ConcurrentLinkedDeque<String>()
+
+    fun recordBlocked(domain: String) {
+        blockedCount.incrementAndGet()
+        recentBlocked.addFirst(domain)
+        while (recentBlocked.size > 100) recentBlocked.pollLast()
+    }
+
+    fun isLoaded(): Boolean = blockedHosts.isNotEmpty()
+
+    fun hasRemoteList(context: Context): Boolean = File(context.filesDir, REMOTE_FILE).exists()
+
+    /** Dùng cho bộ lọc DNS toàn hệ thống. */
+    fun isDomainBlocked(domain: String): Boolean =
+        isHostBlocked(domain.lowercase().trimEnd('.'))
+
     fun load(context: Context) {
         val hosts = HashSet<String>(4096)
         context.assets.open("adblock_hosts.txt").bufferedReader().useLines { lines ->
@@ -44,6 +61,11 @@ object AdBlocker {
             }
         }
         blockedHosts = hosts
+    }
+
+    @Synchronized
+    fun ensureLoaded(context: Context) {
+        if (!isLoaded()) load(context)
     }
 
     fun size(): Int = blockedHosts.size

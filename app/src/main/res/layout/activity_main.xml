@@ -1,86 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/url_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:hint="@string/url_hint"
-        android:imeOptions="actionGo"
-        android:inputType="textUri"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:textSize="15sp" />
-
-    <ProgressBar
-        android:id="@+id/progress"
-        style="@android:style/Widget.Material.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:max="100" />
-
-    <TextView
-        android:id="@+id/blocked_count"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E8F5E9"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="3dp"
-        android:textColor="#2E7D32"
-        android:textSize="12sp" />
-
-    <WebView
-        android:id="@+id/webview"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#F5F5F5"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <ImageButton
-            android:id="@+id/btn_back"
-            style="@android:style/Widget.Material.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/back"
-            android:src="@drawable/ic_back" />
+        <Button
+            android:id="@+id/toggle"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/toggle_off"
+            android:text="@string/btn_off"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/btn_forward"
-            style="@android:style/Widget.Material.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/forward"
-            android:src="@drawable/ic_forward" />
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/btn_refresh"
-            style="@android:style/Widget.Material.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/refresh"
-            android:src="@drawable/ic_refresh" />
+        <TextView
+            android:id="@+id/stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textSize="14sp" />
 
-        <ImageButton
-            android:id="@+id/btn_home"
-            style="@android:style/Widget.Material.Button.Borderless"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="@string/home"
-            android:src="@drawable/ic_home" />
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/menu_update" />
+
+        <Button
+            android:id="@+id/btn_browser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_browser" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#FFF8E1"
+            android:padding="10dp"
+            android:text="@string/tips"
+            android:textSize="13sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/recent_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/recent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="12sp" />
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

@@ -4,16 +4,21 @@
 
 ## Tính năng
 
-- **Chặn quảng cáo theo tên miền**: mọi request (script, ảnh, iframe, XHR…) tới tên miền quảng cáo/theo dõi đều bị chặn trước khi tải (`shouldInterceptRequest`). Chặn cả tên miền con.
-- **Danh sách chặn mặc định** (`app/src/main/assets/adblock_hosts.txt`) gồm Google Ads, các mạng quảng cáo quốc tế và **mạng quảng cáo Việt Nam** (Admicro, Eclick, Adtima…).
-- **Cập nhật danh sách chặn** từ Internet (StevenBlack hosts, ~100.000 tên miền) qua menu.
-- **Ẩn khung quảng cáo** còn sót lại bằng CSS (cosmetic filter).
-- **Chặn popup / tab tự mở** và **chặn chuyển hướng** tới trang quảng cáo.
-- Chặn cookie bên thứ ba.
-- **Whitelist**: cho phép quảng cáo trên trang bạn muốn ủng hộ.
-- Bật/tắt chặn quảng cáo, xem số quảng cáo đã chặn trên trang và tổng cộng.
-- Có thể đặt làm **trình duyệt mặc định** khi mở link.
-- Thanh địa chỉ thông minh: gõ từ khóa sẽ tìm bằng DuckDuckGo.
+### Chặn quảng cáo toàn bộ điện thoại (nút BẬT/TẮT)
+- Màn hình chính có nút **BẬT/TẮT** lớn. Khi bật, quảng cáo bị chặn trong **Chrome, Firefox, Cốc Cốc… và cả các app khác**.
+- Cách hoạt động: app tạo một **VPN cục bộ** chỉ nhận các truy vấn DNS (không gửi dữ liệu ra máy chủ nào). Tên miền quảng cáo được trả lời "không tồn tại" nên quảng cáo không tải được; truy vấn khác được chuyển tới DNS thật (1.1.1.1 / 8.8.8.8). Lưu lượng web bình thường không đi qua VPN nên không làm chậm mạng.
+- Lần bật đầu tiên app tự tải danh sách chặn đầy đủ (StevenBlack, ~100.000 tên miền), có nút cập nhật lại.
+- Thông báo thường trực có nút **Tắt** nhanh; tự bật lại sau khi khởi động máy nếu trước đó đang bật.
+- Hiển thị số lượt đã chặn và các tên miền bị chặn gần đây.
+
+**Để chặn hiệu quả:**
+- *Cài đặt → Mạng → DNS riêng tư*: chọn **Tắt** hoặc **Tự động** (nếu đặt tên nhà cung cấp riêng, DNS sẽ đi vòng qua app).
+- *Chrome → Cài đặt → Quyền riêng tư và bảo mật → Dùng DNS bảo mật*: **Tắt**.
+- Sau khi bật, đóng hẳn rồi mở lại trình duyệt.
+- Chỉ dùng được một VPN tại một thời điểm (nếu đang dùng VPN khác thì app không bật được).
+
+### Trình duyệt tích hợp
+- Nút "Mở trình duyệt tích hợp": trình duyệt có thêm ẩn khung quảng cáo bằng CSS, chặn popup/chuyển hướng, whitelist từng trang.
 
 ## Lấy file APK
 
@@ -35,13 +40,15 @@ APK nằm ở `app/build/outputs/apk/debug/app-debug.apk`.
 | File | Vai trò |
 |---|---|
 | `app/src/main/java/com/adblock/browser/AdBlocker.kt` | Nạp danh sách, kiểm tra URL quảng cáo, cập nhật từ Internet, CSS ẩn quảng cáo |
-| `app/src/main/java/com/adblock/browser/MainActivity.kt` | Giao diện trình duyệt, WebViewClient chặn request, menu |
+| `app/src/main/java/com/adblock/browser/MainActivity.kt` | Màn hình chính với nút BẬT/TẮT |
+| `app/src/main/java/com/adblock/browser/AdBlockVpnService.kt` | VPN cục bộ lọc DNS cho toàn hệ thống |
+| `app/src/main/java/com/adblock/browser/Packets.kt` | Phân tích/dựng gói IPv4/UDP/DNS |
+| `app/src/main/java/com/adblock/browser/BrowserActivity.kt` | Trình duyệt tích hợp |
 | `app/src/main/assets/adblock_hosts.txt` | Danh sách tên miền bị chặn mặc định (có thể tự thêm) |
 
 ## Ghi chú
 
-- Ứng dụng chỉ chặn quảng cáo **bên trong trình duyệt này**, không chặn trong app khác (việc đó cần VPN/DNS như "Private DNS" `dns.adguard-dns.com`).
-- Quảng cáo YouTube chèn trong video phát từ cùng tên miền với nội dung nên có thể không chặn được hoàn toàn.
+- Chặn theo DNS không chặn được quảng cáo phục vụ từ cùng tên miền với nội dung, ví dụ quảng cáo YouTube chèn trong video hay bài đăng được tài trợ trên Facebook.
 - APK release đang ký bằng debug key cho tiện cài; khi phát hành lên Play Store hãy cấu hình keystore riêng.
 
 ## Tải APK trực tiếp
