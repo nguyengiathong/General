@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_toggle" android:title="@string/menu_toggle" android:checkable="true" android:showAsAction="never" />
+    <item android:id="@+id/action_whitelist" android:title="@string/menu_whitelist" android:checkable="true" android:showAsAction="never" />
+    <item android:id="@+id/action_update" android:title="@string/menu_update" android:showAsAction="never" />
+    <item android:id="@+id/action_clear" android:title="@string/menu_clear" android:showAsAction="never" />
+</menu>

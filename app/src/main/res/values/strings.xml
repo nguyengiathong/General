@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AdBlock Browser</string>
+    <string name="url_hint">Nhập địa chỉ web hoặc từ khóa</string>
+    <string name="status_on">🛡 Đã chặn %1$d quảng cáo trên trang này · Tổng: %2$d</string>
+    <string name="status_off">⚠ Chặn quảng cáo đang TẮT</string>
+    <string name="status_whitelisted">✓ Trang này được cho phép hiện quảng cáo</string>
+    <string name="menu_toggle">Bật chặn quảng cáo</string>
+    <string name="menu_whitelist">Cho phép quảng cáo trên trang này</string>
+    <string name="menu_update">Cập nhật danh sách chặn</string>
+    <string name="menu_clear">Xóa cache, lịch sử &amp; cookie</string>
+    <string name="updating">Đang tải danh sách chặn…</string>
+    <string name="update_ok">Đã cập nhật: %1$d tên miền bị chặn</string>
+    <string name="update_fail">Cập nhật thất bại: %1$s</string>
+    <string name="redirect_blocked">Đã chặn chuyển hướng tới trang quảng cáo</string>
+    <string name="cleared">Đã xóa dữ liệu duyệt web</string>
+    <string name="back">Quay lại</string>
+    <string name="forward">Tiến</string>
+    <string name="refresh">Tải lại</string>
+    <string name="home">Trang chủ</string>
+</resources>

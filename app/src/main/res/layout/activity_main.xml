@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/url_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:hint="@string/url_hint"
+        android:imeOptions="actionGo"
+        android:inputType="textUri"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@android:style/Widget.Material.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/blocked_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E8F5E9"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:textColor="#2E7D32"
+        android:textSize="12sp" />
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#F5F5F5"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/back"
+            android:src="@drawable/ic_back" />
+
+        <ImageButton
+            android:id="@+id/btn_forward"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/forward"
+            android:src="@drawable/ic_forward" />
+
+        <ImageButton
+            android:id="@+id/btn_refresh"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/refresh"
+            android:src="@drawable/ic_refresh" />
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            style="@android:style/Widget.Material.Button.Borderless"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/home"
+            android:src="@drawable/ic_home" />
+    </LinearLayout>
+</LinearLayout>
